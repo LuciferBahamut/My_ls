@@ -7,7 +7,8 @@
 
 NAME	=	my_ls
 
-SRC	=	src/main.c
+SRC	=	src/main.c \
+		src/my_putchar.c
 
 CC	=	gcc
 
@@ -31,7 +32,11 @@ clean	:
 fclean	:	clean
 		rm -f $(NAME)
 		rm -f *# \
+		rm -f src/*# \
+		rm -f include/*# \
 		rm -f *~ \
+		rm -f src/*~ \
+		rm -f include/*~ \
 		rm -f *.gcda \
 		rm -f *.gcno
 
