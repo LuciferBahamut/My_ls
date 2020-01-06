@@ -8,7 +8,11 @@
 NAME	=	my_ls
 
 SRC	=	src/main.c \
-		src/my_putchar.c
+		src/my_putchar.c \
+		src/my_putstr.c \
+		src/flag_d.c \
+		src/display_directory.c \
+		src/simple_ls.c
 
 CC	=	gcc
 
