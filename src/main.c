@@ -15,7 +15,6 @@ int main(int ac, char **av)
         if ((dir = opendir("./")) == NULL)
             return (84);
         simple_ls(dir, ac);
-        my_putchar('\n');
     }
     else if (av[1][0] == '-' && av[1][1] == 'd')
         flag_d(ac, av);

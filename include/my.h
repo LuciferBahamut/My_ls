@@ -17,14 +17,12 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <sys/sysmacros.h>
-#include <criterion/criterion.h>
-#include <criterion/redirect.h>
 
 void my_putchar(char c);
 int my_putstr(char const *str);
 void flag_d(int ac, char **av);
 void display_dir(char *str);
+void display_exe(char *str);
 void simple_ls(DIR *dir, int ac);
 
 #endif

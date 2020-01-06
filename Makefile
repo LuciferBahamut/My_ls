@@ -11,7 +11,7 @@ SRC	=	src/main.c \
 		src/my_putchar.c \
 		src/my_putstr.c \
 		src/flag_d.c \
-		src/display_directory.c \
+		src/display_type_color.c \
 		src/simple_ls.c
 
 CC	=	gcc
