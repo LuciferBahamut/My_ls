@@ -13,7 +13,9 @@ SRC	=	src/main.c \
 		src/flag_d.c \
 		src/display_type_color.c \
 		src/simple_ls.c \
-		src/check_flag.c
+		src/check_flag.c \
+		src/flag_R.c \
+		src/my_strlen.c
 
 CC	=	gcc
 

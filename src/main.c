@@ -14,17 +14,16 @@ int main(int ac, char **av)
     if (ac == 1) {
         if ((st->dr = opendir("./")) == NULL)
             return (84);
-        simple_ls(st, ac);
+        simple_ls(st);
         closedir(st->dr);
     }
     else if (av[1][0] == '-')
-        check_flag(ac, av);
+        check_flag(ac, av, st);
     else {
-        if ((st->dr = opendir(av[1])) == NULL)
+        if (simple_ls_arg(st, ac, av) == 84)
             return (84);
-        simple_ls(st, ac);
         closedir(st->dr);
-    }
+        }
     free(st);
     return (0);
 }
