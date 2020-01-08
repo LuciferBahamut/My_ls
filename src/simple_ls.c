@@ -7,18 +7,14 @@
 
 #include "my.h"
 
-void simple_ls(DIR *dir, int ac)
+void simple_ls(st_t *st, int ac)
 {
-    struct dirent *read;
-
-    while (read = readdir(dir))
-        if (read->d_name[0] != '.') {
-            if (read->d_type == DT_DIR)
-                display_dir(read->d_name);
-                //else if (read->d_type == DT_LNK)
-                //    display_exe(read->d_name);
+    while (st->rd = readdir(st->dr))
+        if (st->rd->d_name[0] != '.') {
+            if (st->rd->d_type == DT_DIR)
+                display_dir(st->rd->d_name);
             else
-                my_putstr(read->d_name);
+                my_putstr(st->rd->d_name);
             my_putchar('\n');
         }
 }

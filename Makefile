@@ -12,7 +12,8 @@ SRC	=	src/main.c \
 		src/my_putstr.c \
 		src/flag_d.c \
 		src/display_type_color.c \
-		src/simple_ls.c
+		src/simple_ls.c \
+		src/check_flag.c
 
 CC	=	gcc
 

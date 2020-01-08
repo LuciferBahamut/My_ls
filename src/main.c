@@ -9,20 +9,22 @@
 
 int main(int ac, char **av)
 {
-    DIR *dir;
+    st_t *st = malloc(3);
 
     if (ac == 1) {
-        if ((dir = opendir("./")) == NULL)
+        if ((st->dr = opendir("./")) == NULL)
             return (84);
-        simple_ls(dir, ac);
+        simple_ls(st, ac);
+        closedir(st->dr);
     }
-    else if (av[1][0] == '-' && av[1][1] == 'd')
-        flag_d(ac, av);
+    else if (av[1][0] == '-')
+        check_flag(ac, av);
     else {
-        if ((dir = opendir(av[1])) == NULL)
+        if ((st->dr = opendir(av[1])) == NULL)
             return (84);
-        simple_ls(dir, ac);
+        simple_ls(st, ac);
+        closedir(st->dr);
     }
-    closedir(dir);
+    free(st);
     return (0);
 }
