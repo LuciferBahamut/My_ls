@@ -11,7 +11,7 @@ int simple_ls_arg(st_t *st, int ac, char **av)
 {
     if (ac == 2) {
         if ((st->dr = opendir(av[1])) == NULL)
-                return (84);
+            return (84);
         simple_ls(st);
     }
     else {
