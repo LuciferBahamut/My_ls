@@ -14,6 +14,8 @@ int check_flag(int ac, char **av, st_t *st)
         break;
     case 'R' : flag_R(st);
         break;
+    case 't' : flag_t_simple(st);
+        break;
     }
     return (0);
 }

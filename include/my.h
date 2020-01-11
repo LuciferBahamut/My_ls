@@ -23,7 +23,6 @@ typedef struct st
 {
     DIR *dr;
     struct dirent *rd;
-    struct stat *s;
 } st_t;
 
 void my_putchar(char c);
@@ -35,6 +34,9 @@ void simple_ls(st_t *st);
 int simple_ls_arg(st_t *st, int ac, char **av);
 int check_flag(int ac, char **av, st_t *st);
 void flag_R(st_t *st);
+void flag_t_simple(st_t *st);
 int my_strlen(char const *str);
+void swap_elem(int nb, int nb2, char **str);
+void display_file(char *stock, st_t *st, char *str);
 
 #endif

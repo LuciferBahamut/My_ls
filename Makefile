@@ -15,7 +15,10 @@ SRC	=	src/main.c \
 		src/simple_ls.c \
 		src/check_flag.c \
 		src/flag_R.c \
-		src/my_strlen.c
+		src/my_strlen.c \
+		src/flag_t.c \
+		src/swap_elem.c \
+		src/display.c
 
 CC	=	gcc
 
