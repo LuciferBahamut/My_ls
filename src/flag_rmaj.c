@@ -47,7 +47,7 @@ int display(char **str, st_t *st, int i)
     return (0);
 }
 
-void flag_R(st_t *st)
+void flag_rmaj(st_t *st)
 {
     char **str;
 

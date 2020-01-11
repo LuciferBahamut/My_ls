@@ -31,27 +31,25 @@ char **fill_name(char **dis_stock, char **stock, int nb)
 char **fill_stock(int nb, char *str, st_t *st, char **stock)
 {
     int size = 0;
-    int sizedr = my_strlen(str);
+    int szdr = my_strlen(str);
     int i = 0;
     int add = 0;
 
-    st->dr = opendir(str);
     while ((st->rd = readdir(st->dr)) != 0 || i != nb)
         if (st->rd->d_name[0] != '.') {
             size = my_strlen(st->rd->d_name);
-            stock[i] = malloc((size + sizedr + 1) * sizeof(char));
+            stock[i] = malloc((size + szdr + 1) * sizeof(char));
             for (int j = 0; str[j] != '\0'; j++)
                 stock[i][j] = str[j];
-            if (str[sizedr - 1] != '/') {
-                stock[i][sizedr] = '/';
+            if (str[szdr - 1] != '/') {
+                stock[i][szdr] = '/';
                 add++;
             }
-            for (int a = sizedr + add, b = 0; st->rd->d_name[b] != '\0'; a++, b++)
+            for (int a = szdr + add, b = 0; st->rd->d_name[b] != '\0'; a++, b++)
                 stock[i][a] = st->rd->d_name[b];
             i++;
             add = 0;
         }
-    closedir(st->dr);
     return (stock);
 }
 
@@ -86,22 +84,24 @@ void check_time(char **stock, int nb)
     }
 }
 
-void flag_t_simple(st_t *st)
+void flag_t_simple(st_t *st, char *str)
 {
-    int nb = count_files("./", st);
+    int nb = count_files(str, st);
     char **dis_stock = malloc(nb * (sizeof(char *)));
     char **stock = malloc(nb * (sizeof(char *)));
 
-    stock = fill_stock(nb, "./", st, stock);
+    st->dr = opendir(str);
+    stock = fill_stock(nb, str, st, stock);
+    closedir(st->dr);
     if (nb == 1) {
         dis_stock = fill_name(dis_stock, stock, nb);
-        display_file(dis_stock[0], st, "./");
+        display_file(dis_stock[0], st, str);
     }
     else {
         check_time(stock, nb);
         dis_stock = fill_name(dis_stock, stock, nb);
         for (int i = 0; i != nb; i++)
-            display_file(dis_stock[i], st, "./");
+            display_file(dis_stock[i], st, str);
     }
     free(stock);
     free(dis_stock);

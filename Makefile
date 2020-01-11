@@ -11,14 +11,15 @@ SRC	=	src/main.c \
 		src/my_putchar.c \
 		src/my_putstr.c \
 		src/flag_d.c \
-		src/display_type_color.c \
+		src/display_color.c \
 		src/simple_ls.c \
 		src/check_flag.c \
-		src/flag_R.c \
+		src/flag_rmaj.c \
 		src/my_strlen.c \
 		src/flag_t.c \
 		src/swap_elem.c \
-		src/display.c
+		src/display.c \
+		src/flag_t_arg.c
 
 CC	=	gcc
 

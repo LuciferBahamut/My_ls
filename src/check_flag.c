@@ -9,13 +9,19 @@
 
 int check_flag(int ac, char **av, st_t *st)
 {
-    switch(av[1][1]) {
-    case 'd' : flag_d(ac, av);
-        break;
-    case 'R' : flag_R(st);
-        break;
-    case 't' : flag_t_simple(st);
-        break;
+    if (ac == 2)
+        switch(av[1][1]) {
+        case 'R' : flag_rmaj(st);
+            break;
+        case 't' : flag_t_simple(st, "./");
+            break;
+        }
+    else
+        switch(av[1][1]) {
+        case 'd' : flag_d(ac, av);
+            break;
+        case 't' : flag_t_arg(ac, av, st);
+            break;
     }
     return (0);
 }
