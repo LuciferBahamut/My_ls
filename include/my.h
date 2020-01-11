@@ -8,7 +8,7 @@
 #ifndef MY_H_
 #define MY_H_
 
-#define BLUE "\e[0;34m"
+#define BLUE "\x1B[94m"
 #define WHITE "\e[0;0m"
 
 #include <stdio.h>
@@ -38,5 +38,6 @@ int flag_t_arg(int ac, char **av, st_t *st);
 int my_strlen(char const *str);
 void swap_elem(int nb, int nb2, char **str);
 void display_file(char *stock, st_t *st, char *str);
+int count_files(char *str, st_t *st);
 
 #endif
