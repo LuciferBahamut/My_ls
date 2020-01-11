@@ -27,8 +27,7 @@ char **stock(st_t *st)
     for (int j = 0, m = 0; st->rd = readdir(st->dr); j++) {
         if (st->rd->d_name[0] != '.' && st->rd->d_type == DT_DIR) {
             str[m] = malloc((my_strlen(st->rd->d_name)+ 1) * sizeof(char));
-            for (int k = 0; k != my_strlen(st->rd->d_name); k++)
-                str[m][k] = st->rd->d_name[k];
+            str[m] = st->rd->d_name;
             m++;
         }
     }
@@ -42,8 +41,8 @@ int display(char **str, st_t *st, int i)
         my_putstr(str[j]);
         my_putstr(":\n");
         st->dr = opendir(str[j]);
-        st->rd = readdir(st->dr);
         simple_ls(st);
+        closedir(st->dr);
     }
     return (0);
 }
