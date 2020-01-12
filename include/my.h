@@ -18,6 +18,9 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <time.h>
+#include <pwd.h>
+#include <grp.h>
 
 typedef struct st
 {
@@ -39,5 +42,12 @@ int my_strlen(char const *str);
 void swap_elem(int nb, int nb2, char **str);
 void display_file(char *stock, st_t *st, char *str);
 int count_files(char *str, st_t *st);
+char *ct_time(char *time);
+void print_ugid(uid_t u, gid_t g);
+void right_print(mode_t m);
+void flag_l(char *str, st_t *st);
+int my_put_nbr(int nb);
+char *my_strcat(char *dest, char *src);
+int multi_l(int ac, char **av, st_t *st);
 
 #endif

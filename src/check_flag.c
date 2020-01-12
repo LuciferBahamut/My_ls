@@ -15,12 +15,15 @@ int check_flag(int ac, char **av, st_t *st)
             break;
         case 't' : flag_t_simple(st, "./");
             break;
+        case 'l' : flag_l("./", st);
         }
     else
         switch(av[1][1]) {
         case 'd' : flag_d(ac, av);
             break;
         case 't' : flag_t_arg(ac, av, st);
+            break;
+        case 'l' : multi_l(ac, av, st);
             break;
     }
     return (0);

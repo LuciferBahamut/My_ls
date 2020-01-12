@@ -19,7 +19,11 @@ SRC	=	src/main.c \
 		src/flag_t.c \
 		src/swap_elem.c \
 		src/display.c \
-		src/flag_t_arg.c
+		src/flag_t_arg.c \
+		src/flag_l.c \
+		src/right_print.c \
+		src/my_strcat.c \
+		src/my_put_nbr.c
 
 CC	=	gcc
 
