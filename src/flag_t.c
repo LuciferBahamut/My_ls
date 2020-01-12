@@ -19,9 +19,9 @@ char **fill_name(char **dis_stock, char **stock, int nb)
             j++;
         j++;
         for (int k = 0; stock[i][j] != '\0'; k++, j++) {
-            dis_stock[i][k] = stock[i][j];
             if (stock[i][j + 1] == '\0')
                 dis_stock[i][k + 1] = '\0';
+            dis_stock[i][k] = stock[i][j];
         }
         j = 0;
     }
@@ -100,8 +100,10 @@ void flag_t_simple(st_t *st, char *str)
     else {
         check_time(stock, nb);
         dis_stock = fill_name(dis_stock, stock, nb);
-        for (int i = 0; i != nb; i++)
+        for (int i = 0; i != nb; i++) {
+            free(stock[i]);
             display_file(dis_stock[i], st, str);
+        }
     }
     free(stock);
     free(dis_stock);

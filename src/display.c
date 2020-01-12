@@ -35,4 +35,5 @@ void display_file(char *stock, st_t *st, char *str)
                 my_putchar('\n');
             }
         }
+    free(stock);
 }
