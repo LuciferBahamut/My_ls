@@ -1,6 +1,8 @@
 <h1>My_ls</h1>
 <h3>{EPITECH} -- First year -- Semester 1 -- thrid PSU project</h3>
 
+<p>1st semester PSU unit part II : Grade C</p>
+
 <p>my_ls -- Without Crash</p>
 
 <p>Result : 57,9 %</p>
